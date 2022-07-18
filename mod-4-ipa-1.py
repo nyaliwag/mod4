@@ -156,8 +156,8 @@ def eta(first_stop, second_stop, route_map):
         if (first_stop,second_stop) in route_map:
             minutes = route_map[(first_stop,second_stop)]['travel_time_mins']
         else:
-            if startind < endind:
-                minutes = sum(num_list[startind:(endind+1)])
+            if startind < desind:
+                minutes = sum(num_list[startind:(desind+1)])
             else:
-                minutes = sum(num_list[startind:endind+(len(num_list))]) + sum(num_list[0:endind+1])
+                minutes = sum(num_list[startind:desind+(len(num_list))]) + sum(num_list[0:desind+1])
     return minutes
